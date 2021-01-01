@@ -11,16 +11,10 @@ import { mapState } from "vuex";
 
 export default {
   name: "Home",
-  data() {
-    return {
-      user: "Nathalie",
-    };
-  },
-  computed: {
-    count() {
-      return store.state.user;
-    },
-  },
+  computed: mapState({
+    // arrow functions can make the code very succinct!
+    user: (state) => state.user,
+  }),
   components: {
     HelloWorld,
   },
